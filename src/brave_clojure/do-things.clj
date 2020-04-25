@@ -1,4 +1,4 @@
-; Exersize 1
+; Exercise 1
 (defn greeter
     [name]
     (str "Hello " name "! :)"))
@@ -19,17 +19,17 @@
     [a b c]
     (hash-set a b c))
 
-; Exersize 2
+; Exercise 2
 (defn plus100
     [x]
     (+ x 100))
 
-; Exersize 3
+; Exercise 3
 (defn dec-maker
     [delta]
     #(- % delta))
 
-; Exersize 5
+; Exercise 4
 (defn mapset
     [func items]
     (loop [remaining items
@@ -44,7 +44,7 @@
     [func items]
     (set (map func items)))
 
-; Exersize 5 and 6
+; Exercise 5 and 6
 (def asym-hobbit-body-parts [{:name "head" :size 3}
                              {:name "left-eye" :size 1}
                              {:name "left-ear" :size 1}
