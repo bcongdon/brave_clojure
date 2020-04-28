@@ -36,24 +36,23 @@
   (filter #(>= (:glitter-index %) minimum-glitter) records))
 
 (def names
-    (map :name (glitter-filter 3 (mapify (parse (slurp filename))))))
-
+  (map :name (glitter-filter 3 (mapify (parse (slurp filename))))))
 
 ; Exercise 2
 (defn my-append
-    [suspect all-suspects]
-    (reduce conj all-suspects [suspect]))
+  [suspect all-suspects]
+  (reduce conj all-suspects [suspect]))
 
 ; Exercise 3
 (defn validate
-    [keys record]
-    (def values (map #(get record %) keys))
-    (not (some nil? values)))
+  [keys record]
+  (def values (map #(get record %) keys))
+  (not (some nil? values)))
 
 (def validate-vamp (partial validate vamp-keys))
 
 ; Exercise 4
 (defn to-csv
-    [records]
-    (def rows (map #(clojure.string/join "," (map second %)) records))
-    (clojure.string/join "\n" (into rows [""])))
+  [records]
+  (def rows (map #(clojure.string/join "," (map second %)) records))
+  (clojure.string/join "\n" (into rows [""])))

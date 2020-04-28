@@ -1,48 +1,48 @@
 ; Exercise 1
 (defn greeter
-    [name]
-    (str "Hello " name "! :)"))
+  [name]
+  (str "Hello " name "! :)"))
 
 (defn combine-3
-    [a b c]
-    (vector a b c))
+  [a b c]
+  (vector a b c))
 
 (defn combine-3-list
-    [a b c]
-    (list a b c))
+  [a b c]
+  (list a b c))
 
 (defn make-person
-    [name height]
-    (hash-map :name name :height height))
+  [name height]
+  (hash-map :name name :height height))
 
 (defn dedup-3
-    [a b c]
-    (hash-set a b c))
+  [a b c]
+  (hash-set a b c))
 
 ; Exercise 2
 (defn plus100
-    [x]
-    (+ x 100))
+  [x]
+  (+ x 100))
 
 ; Exercise 3
 (defn dec-maker
-    [delta]
-    #(- % delta))
+  [delta]
+  #(- % delta))
 
 ; Exercise 4
 (defn mapset
-    [func items]
-    (loop [remaining items
-            final #{}]
-        (if (empty? remaining)
-        final
-        (let [[part & remaining] remaining]
-            (recur remaining
-                (conj final (func part)))))))
+  [func items]
+  (loop [remaining items
+         final #{}]
+    (if (empty? remaining)
+      final
+      (let [[part & remaining] remaining]
+        (recur remaining
+               (conj final (func part)))))))
 
 (defn mapset-easy
-    [func items]
-    (set (map func items)))
+  [func items]
+  (set (map func items)))
 
 ; Exercise 5 and 6
 (def asym-hobbit-body-parts [{:name "head" :size 3}
@@ -66,9 +66,9 @@
                              {:name "left-foot" :size 2}])
 
 (defn make-part
-    [part suffix]
-    {:name (clojure.string/replace (:name part) #"^left-" (str "extra-" suffix "-"))
-    :size (:size part)})
+  [part suffix]
+  {:name (clojure.string/replace (:name part) #"^left-" (str "extra-" suffix "-"))
+   :size (:size part)})
 
 (defn matching-parts
   [part num_parts]
